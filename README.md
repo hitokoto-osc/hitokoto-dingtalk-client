@@ -7,8 +7,8 @@
 **开发计划**
 - [x] php
 - [ ] nodejs
-- [ ] bash shell 
-- [ ] golang 
+- [ ] bash shell
+- [ ] golang
 - [ ] javascript
 
 ## 指南
@@ -22,6 +22,9 @@
 ```shell
 $ ./dingtalk.php [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
 ```
+
+## 使用效果
+![-w500](https://alextech-1252251443.cos.ap-guangzhou.myqcloud.com/2020/05-28-15906541899926.jpg)
 
 ## 其他
 
