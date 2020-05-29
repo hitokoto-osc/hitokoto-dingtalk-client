@@ -6,21 +6,31 @@
 
 **开发计划**
 - [x] php
+- [x] linux shell
 - [ ] nodejs
-- [ ] bash shell
+- [ ] python
 - [ ] golang
 - [ ] javascript
 
 ## 指南
-> 各语言客户端的调用方法统一实现
+> 如何添加 [钉钉机器人](https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq)    
 
-**参数**
+**命令参数**
 - `--api-url` 为 `hitokoto api` 或其镜像接口地址
 - `--robot-url` 为钉钉群机器人链接
 
 **调用示例**
+
+*php*
 ```shell
 $ ./dingtalk.php [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
+```
+
+*shell*
+> 目前仅支持定义 --robot-url
+
+```shell
+$ ./dingtalk.sh --robot-url https://oapi.dingtalk.com/robot/xxxxx
 ```
 
 ## 使用效果
