@@ -1,17 +1,21 @@
-#!/usr/bin/php
+#!/usr/bin/env php
 <?php
 
 /**
  * 获取和检查URL
+ *
+ * @param      $arg
+ * @param null $default
+ * @return mixed
  */
-function getArg ($arg) {
+function getArgument($arg , $default = null)
+{
     $argv = $GLOBALS['_SERVER']['argv'];
     if (in_array($arg , $argv)) {
-        $apiUrlIndex = array_search($arg ,$argv) + 1;
-        if (isset($argv[$apiUrlIndex])) {
-            return $argv[$apiUrlIndex];
-        }
+        return $argv[array_search($arg , $argv) + 1] ?? $default;
     }
+    
+    return $default;
 }
 
 /**
@@ -32,23 +36,20 @@ function getHitokoto($apiUrl)
  * @param $source
  * @param $creator
  * @param $sentence
- * @return array
+ * @return string
  * @copyright ©Alex (System.out.println.org and use TLS). All rights reserved.
  */
 function makeData($source , $creator , $sentence)
 {
-    return [
+    return json_encode([
         'msgtype'  => 'markdown' ,
         'markdown' => [
             'title' => '一言' ,
-            'text'  => <<<TEXT
-**{$sentence}**
-
-> {$creator}「{$source}」
-TEXT
-            ,
+            'text'  => "**{$sentence}**
+            
+> {$creator}「{$source}」" ,
         ] ,
-    ];
+    ]);
 }
 
 /**
@@ -59,14 +60,14 @@ TEXT
  * @return mixed
  * @copyright ©Alex (System.out.println.org and use TLS). All rights reserved.
  */
-function postWithJson($uri , $data)
+function postToDingtalk($uri , $data)
 {
     $ch = curl_init();
     curl_setopt($ch , CURLOPT_URL , $uri);
     curl_setopt($ch , CURLOPT_POST , 1);
     curl_setopt($ch , CURLOPT_CONNECTTIMEOUT , 5);
     curl_setopt($ch , CURLOPT_HTTPHEADER , ['Content-Type: application/json;charset=utf-8']);
-    curl_setopt($ch , CURLOPT_POSTFIELDS , json_encode($data));
+    curl_setopt($ch , CURLOPT_POSTFIELDS , $data);
     curl_setopt($ch , CURLOPT_RETURNTRANSFER , true);
     $data = curl_exec($ch);
     curl_close($ch);
@@ -74,20 +75,23 @@ function postWithJson($uri , $data)
     return json_decode($data);
 }
 
-// 钉钉群机器人 URL
-$robotUrl = getArg('--robot-url');
-if ($robotUrl === null) {
-    exit('--robot-url is required');
+// 钉钉机器人 URL
+$robotUrl = getArgument('--robot-url');
+if (! preg_match('/^https?:\/\//' , $robotUrl)) {
+    exit('--robot-url must be url');
 }
 
 // 一言API地址
-$apiUrl = getArg('--api-url') ?? 'https://v1.hitokoto.cn/#';
+$apiUrl = getArgument('--api-url' , 'https://v1.hitokoto.cn/#');
+if (! preg_match('/^https?:\/\//' , $apiUrl)) {
+    exit('--api-url must be url');
+}
 
 // 请求
 $hitokoto = getHitokoto($apiUrl);
 // 构造 markdown 和发送到钉钉
-$result   = postWithJson(
-    $robotUrl , 
+$result = postToDingtalk(
+    $robotUrl ,
     makeData($hitokoto->from , $hitokoto->creator , $hitokoto->hitokoto)
 );
 
