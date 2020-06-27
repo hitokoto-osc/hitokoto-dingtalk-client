@@ -16,6 +16,7 @@ hitokoto-dingtalk-client
 - [x] [python](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.py)
 - [x] [golang](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.go)
 - [ ] javascript
+- [ ] java
 - [ ] c
 
 ## 命令行参数
@@ -33,8 +34,22 @@ hitokoto-dingtalk-client
 | post-with-json(robot-url , data) | 机器人API地址 |  推送到钉钉服务器 |
 | make-data(source , creator , sentence) | 从哪里来，谁创建的，说了什么 | 构造发送给钉钉的数据 |
 
-## 调用示例
+## 编译运行
 
+所有版本均提供 `Makefile` 和命令行与两种运行方法。二者的区别为 `Makefile` 为编译型语言提供标准编译支持，命令行则需要自行编译
+
+### Makefile
+
+使用 `php`、`linux-shell`、`nodejs`、`python`、`golang` 中的任何一个，替换命令中的 *LANGUAGE* 或 *$language* 即可
+
+```shell
+$ language=LANGUAGE
+$ make clean $language \
+    api-url https://v1.hitokoto.cn \
+    robot-url=https://oapi.dingtalk.com/robot/xxxxx
+```
+
+### 命令行
 - php 
 
 ```shell
@@ -70,5 +85,5 @@ $ ./dingtalk.py [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.ding
 $ go run ./dingtalk.go [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
 ```
 
-## 调用效果
+## 推送效果
 ![-w500](https://alextech-1252251443.cos.ap-guangzhou.myqcloud.com/2020/05-28-15906541899926.jpg)
