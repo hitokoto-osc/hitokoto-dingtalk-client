@@ -9,7 +9,7 @@
 - [x] linux shell
 - [x] nodejs
 - [x] python
-- [ ] golang
+- [x] golang
 - [ ] javascript
 - [ ] c
 
