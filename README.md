@@ -85,5 +85,20 @@ $ ./dingtalk.py [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.ding
 $ go run ./dingtalk.go [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
 ```
 
+
+### *shell*
+> shell 版本仅支持 centos，所以本仓库特别提供了基于 docker 的运行方法
+
+- Makefile
+```shell
+$ make linux-shell-with-docker
+```
+
+- 命令行
+```shell
+$ docker build -t hitokoto/client:v1 . --build-arg --build-arg robot_url=https://oapi.dingtalk.com/robot/xxxxx
+$ docker run --rm hitokoto/client:v1
+```
+
 ## 推送效果
 ![-w500](https://alextech-1252251443.cos.ap-guangzhou.myqcloud.com/2020/05-28-15906541899926.jpg)

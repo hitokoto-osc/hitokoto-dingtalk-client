@@ -8,6 +8,11 @@ linux-shell: dingtalk.sh
 	chmod +x ./dingtalk.sh
 	./dingtalk.sh --api-url $(api-url) --robot-url $(robot-url)
 
+# linux shell 使用 docker 版本
+linux-shell-with-docker: dingtalk.sh
+	docker build --build-arg --build-arg robot_url=$(robot-url) -t hitokoto/client:v1 .
+	docker run -it hitokoto/client:v1
+
 # nodejs 版本
 nodejs: dingtalk.js
 	chmod +x ./dingtalk.js
