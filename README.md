@@ -18,9 +18,20 @@ hitokoto-dingtalk-client
 - [ ] javascript
 - [ ] c
 
-## 参数
+## 命令行参数
 - `--api-url` 为 `hitokoto api` 或其镜像接口地址
 - `--robot-url` 为[钉钉机器人](https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq)链接
+
+## 抽象编程 API
+
+> 此处提供伪代码，实际命名规则与参数类型根据目标语言的约定而改变
+
+|  api  | 参数 |  功能  |
+|  ---- | ---- | ----  |
+| get-argument(name , default) | 名称，默认值 | 获取命令行参数 |
+| get-hitokoto(api-url) | 一言API地址或其镜像 | 获取一言 |
+| post-with-json(robot-url , data) | 机器人API地址 |  推送到钉钉服务器 |
+| make-data(source , creator , sentence) | 从哪里来，谁创建的，说了什么 | 构造发送给钉钉的数据 |
 
 ## 调用示例
 
