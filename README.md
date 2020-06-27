@@ -1,10 +1,15 @@
-# hitokoto-dingtalk-client
+hitokoto-dingtalk-client
+========
+
 > 获取一句 [hitokoto](https://github.com/hitokoto-osc) 并推送到钉钉群，给无聊的工作增加一点乐趣
 
 ## 依赖管理
-为了减少三方依赖，本仓库提供的客户端均采用语言标准库，不依赖任何第三方库
+为了减少三方依赖，本仓库提供的客户端均采用语言标准库能力，不依赖任何第三方库
 
 ## 开发计划
+
+> 对外提供各种语言的版本，对内提供一致的api，方便感兴趣的朋友们进行二开
+
 - [x] php
 - [x] linux shell
 - [x] nodejs
@@ -42,6 +47,12 @@ $ ./dingtalk.js [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.ding
 ```
 
 - python3
+
+```shell
+$ go run ./dingtalk.go [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
+```
+
+- golang
 
 ```shell
 $ chmod +x ./dingtalk.py
