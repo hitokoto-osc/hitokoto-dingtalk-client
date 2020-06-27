@@ -96,7 +96,7 @@ $ make linux-shell-with-docker
 
 - 命令行
 ```shell
-$ docker build -t hitokoto/client:v1 . --build-arg --build-arg robot_url=https://oapi.dingtalk.com/robot/xxxxx
+$ docker build -t hitokoto/client:v1 . --build-arg robot_url=https://oapi.dingtalk.com/robot/xxxxx
 $ docker run --rm hitokoto/client:v1
 ```
 
