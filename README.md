@@ -10,11 +10,11 @@ hitokoto-dingtalk-client
 
 > 对外提供各种语言的版本，对内提供一致的api，方便感兴趣的朋友们进行二开
 
-- [x] php
-- [x] linux shell
-- [x] nodejs
-- [x] python
-- [x] golang
+- [x] [php](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.php)
+- [x] [linux shell](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.sh)
+- [x] [nodejs](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.js)
+- [x] [python](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.py)
+- [x] [golang](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.go)
 - [ ] javascript
 - [ ] c
 
@@ -49,14 +49,14 @@ $ ./dingtalk.js [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.ding
 - python3
 
 ```shell
-$ go run ./dingtalk.go [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
+$ chmod +x ./dingtalk.py
+$ ./dingtalk.py [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
 ```
 
 - golang
 
 ```shell
-$ chmod +x ./dingtalk.py
-$ ./dingtalk.py [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
+$ go run ./dingtalk.go [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
 ```
 
 ## 调用效果
