@@ -15,8 +15,8 @@ hitokoto-dingtalk-client
 - [x] [nodejs](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.js)
 - [x] [python](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.py)
 - [x] [golang](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.go)
+- [x] [java](https://github.com/hitokoto-osc/hitokoto-java-sdk)
 - [ ] javascript
-- [ ] java
 - [ ] c
 
 ## 命令行参数
@@ -84,6 +84,10 @@ $ ./dingtalk.py [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.ding
 ```shell
 $ go run ./dingtalk.go [--api-url https://v1.hitokoto.cn] --robot-url https://oapi.dingtalk.com/robot/xxxxx
 ```
+
+- java
+
+参考 [hitokoto-java-sdk](https://github.com/hitokoto-osc/hitokoto-java-sdk)
 
 
 ### *shell*

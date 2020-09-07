@@ -1,3 +1,5 @@
+JAVA_VERSION_REPO = "https://github.com/hitokoto-osc/hitokoto-java-sdk"
+
 # php 版本
 php: dingtalk.php
 	chmod +x ./dingtalk.php
@@ -32,9 +34,8 @@ javascript: dingtalk.html
 	open dingtalk.html || xed-open dingtalk.html
 
 # java 版本
-java: Dingtalk.java
-	mkdir /tmp/hitokoto && cd /tmp/hitokoto
-	javac Dingtalk.java && java Dingtalk
+java:
+	open "$(JAVA_VERSION_REPO)" || xdg-open "$(JAVA_VERSION_REPO)"
 
 # C 版本
 c: dingtalk.c
