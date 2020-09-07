@@ -29,10 +29,6 @@ python: dingtalk.py
 golang: dingtalk.go
 	go run ./dingtalk.go --api-url $(api-url) --robot-url $(robot-url)
 
-# javascript 版本
-javascript: dingtalk.html
-	open dingtalk.html || xed-open dingtalk.html
-
 # java 版本
 java:
 	open "$(JAVA_VERSION_REPO)" || xdg-open "$(JAVA_VERSION_REPO)"

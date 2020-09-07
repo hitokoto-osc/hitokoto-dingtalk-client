@@ -16,7 +16,6 @@ hitokoto-dingtalk-client
 - [x] [python](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.py)
 - [x] [golang](https://github.com/hitokoto-osc/hitokoto-dingtalk-client/blob/master/dingtalk.go)
 - [x] [java](https://github.com/hitokoto-osc/hitokoto-java-sdk)
-- [ ] javascript
 - [ ] c
 
 ## 命令行参数
